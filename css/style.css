@@ -1,0 +1,147 @@
+header {
+/*	background: orange;*/
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+
+}
+header img{
+	width: 30px;
+}
+
+header .text-container {
+	padding:0px 10px;
+}
+
+nav {
+	/*background: pink;*/
+	display: flex;
+	justify-content: flex-end;
+	padding: 5px 0px;
+	padding-right: 4%;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+section{
+	background: url("../img/tumblr_n25ui33hdO1qcdtsho1_500.jpg");
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+}
+
+section .container {
+	background:#CAE5E4	;
+	height: 400px;
+	width: 65%;
+	padding: 10px;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+}
+
+section .container .login-container{
+	/*background: white;*/
+	border: 1px solid gray;
+	padding: 10px;
+}
+
+section .container .login-container .form-group{
+	margin-bottom:5px;
+}
+section .container .login-container label {
+	display: inline-block;
+	width: 20%;
+	text-align: end;
+}
+section .container .login-container input {
+	width: 30%;
+}
+section .container .login-container #inputRemember {
+	width:13px;
+}
+
+section .container .login-container button {
+	margin-left: 20%;
+	}
+section .side-bar {
+	display: flex;
+	justify-content: flex-start;
+	/*background: green;*/
+	width: 12%;
+	padding: 10px;
+}
+/*section .side-bar .side-bar-container {
+	color:black;
+
+}*/
+
+footer {
+	display: flex;
+	justify-content: center;
+	/*background: red;*/
+	padding: 5px 0px;
+	border-top: 1px solid gray;
+}
+
+
+
+
+
+
+
+/*----------------------------------------------------------------*/
+/*-------------------------user page -----------------------------*/
+/*----------------------------------------------------------------*/
+
+
+
+section .container .inner-container {
+	/*background: white;*/
+	border: 1px solid gray;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+section .container .inner-container button{
+	margin: 5px 0px;
+	width: 15%;
+}
+
+section .container .table-container .delete-action{
+	color: red;
+	
+}
+
+section .container .table-container{
+	width:100%;
+	margin-bottom:5px;
+}
+
+section .container .table-container  table{
+	width:100%;
+}
+
+section .container .table-container  th{
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+
+section .container .table-container  th, td{
+	border-bottom: 1px solid gray;
+	text-align: center;
+}
+
+section .container .load-container input{
+	width: 83%;
+}
+
+section .container .remote-load-container input[type="text"] {
+	width: 100%;
+}
+
+
+
+

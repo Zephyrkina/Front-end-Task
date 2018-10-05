@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Home task 1</title>
+	<link rel="stylesheet" href="../css/style.css">
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+          <script type="text/javascript" src="../js/script.js" ></script>
+	
+</head>
+<body>
+	<header>
+		<div class="image-container"> <img  src="../img/folder.png" ></div>
+		<div class="text-container">Файловое хранилище v 0.01 (потеряй свои файлы красиво! ;))</div>
+		<div class="image-container"><img src="../img/folder.png"></div>
+
+	</header>
+
+	<nav>
+
+		<div>Вы вошли в систему как <b>Иванов Иван Иванович</b>. <a href="#">Выйти.</a></div>
+		
+	</nav>
+	
+
+	<section>
+		
+			<div class="side-bar"> 
+				<div class="side-bar-container">
+					<b>Можно загружать:</b><br>
+					ZIP (до 20 Mb);<br>
+					DOCX (до 40 Mb);<br>
+					PPTX (до 50 Mb);<br><br>
+					<b>Использовано:</b><br>
+					24.37 из 100.00 Mb
+
+				
+				</div>
+			</div>		
+			<div class="container">
+				<div class="table-container">
+					<table id="my-table">
+						<tr>
+							<th >Файл  <i id="sort-by-name" class=" fas fa-sort" ></i></th>
+							<th>Размер(Kb)  <i id="sort-by-size" class="fas fa-sort" ></i></th>
+							<th>Дата и время  <i class="fas fa-sort "id="sort-by-date"></i></th>
+							<th>Удалить</th>
+						</tr>
+						<tr>
+							<td><a href="#">Это_архив_с_русским_именем.zip</a></td>
+							<td>132.22</td>
+							<td>2014.02.28 18:04:15</td>
+							<td><a href="#" class="delete-action">Удалить</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">_www_app.zip</a></td>
+							<td>732.45</td>
+							<td>2011.02.28 18:24:15</td>
+							<td><a href="#" class="delete-action">Удалить</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">a_www_app.zip</a></td>
+							<td>532.45</td>
+							<td>2012.02.28 18:24:15</td>
+							<td><a href="#" class="delete-action">Удалить</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">c_www_app.zip</a></td>
+							<td>232.45</td>
+							<td>2013.02.28 18:24:15</td>
+							<td><a href="#" class="delete-action">Удалить</a></td>
+						</tr>
+
+					</table>
+				</div>
+				<div class=" inner-container load-container">
+					Загрузить новый файл:<br>
+					<button>Выбрать</button>
+					<input type="text"><br>
+					<button>Загрузить</button>
+				</div>
+				<div class="inner-container remote-load-container">
+					Запросить с удаленного сервера:<br>
+					<input type="text" class="input-path"><br>
+					Поместить в хранилище: 
+					<input type="checkbox" class="input-checkbox"><br>
+					<button>Запросить</button>
+				</div>
+			</div>
+			<div class="side-bar"> 
+				<div class="side-bar-container">
+					<b>Статистика:</b> <br>
+					Пользователей: 123 <br>
+					Файлов: 1234 <br>
+					Объём: 2345 Мб <br>
+					Объём / польз.: 45 Мб
+				</div>
+			</div>
+	
+	</section>
+	
+	<footer>
+		<div>&copy;2014.EPAM RD PHP Training</div>
+		
+	</footer>
+
+
+</body>
+	
+</html>
