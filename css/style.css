@@ -63,8 +63,9 @@ section .container .login-container #inputRemember {
 	width:13px;
 }
 
-section .container .login-container button {
+section .container .login-container #login-button {
 	margin-left: 20%;
+	width:10%;
 	}
 section .side-bar {
 	display: flex;

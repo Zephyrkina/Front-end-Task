@@ -1,86 +1,55 @@
 window.onload = function () {
-/*
-	var elem = document.getElementById("text");
-	console.log(elem);*/
-	//var regex = "^[0-9a-zA-Zа-яёА-ЯЁ_.-]{4,20}\@[a-zA-Zа-яёА-ЯЁ0-9]{2,5}(\.[a-zA-Zа-яёА-ЯЁ0-9]{2,5}){1,2}$";
-	
-	//regex = "^([^\.](?:.[a-zA-Zа-яёА-ЯЁ]+)[0-9a-zA-Zа-яёА-ЯЁ_.-]{4,20})\@[a-zA-Zа-яёА-ЯЁ0-9]{2,5}(\.[a-zA-Zа-яёА-ЯЁ0-9]{2,5}){1,2}";
- 	login = document.getElementById("inputLogin");
-	password = document.getElementById("inputPassword");
 
-    UpLowRegex="^((?=.*[a-z])(?=.*[A-Z])).{8,20}$";
-     charReg="^(?=.*[-+_!@#$%^&*.,?]).{8,20}$";
-
-	
-	//^([^\.](?:.[a-zA-Zа-яёА-ЯЁ]+)[0-9a-zA-Zа-яёА-ЯЁ_.-]{4,20})\@[a-zA-Zа-яёА-ЯЁ0-9]{2,5}(\.[a-zA-Zа-яёА-ЯЁ0-9]{2,5}){1,2}$
+ 	var login = document.getElementById("inputLogin");
+	var password = document.getElementById("inputPassword");
+	var loginRegex = "/^([^\.](?:.[a-zA-Zа-яёА-ЯЁ]+)[0-9a-zA-Zа-яёА-ЯЁ_.-]{4,20})@[a-zA-Zа-яёА-ЯЁ0-9]{2,5}(\.[a-zA-Zа-яёА-ЯЁ0-9]{2,5}){1,2}$";
+	var loginCharReg = "^$";
 
 
-	/*var handler = function(){
+    var passUpLowRegex="^((?=.*[a-z])(?=.*[A-Z])).{8,20}$";
+    var passCharReg="^(?=.*[-+_!@#$%^&*.,?]).{8,20}$";
+
+//^(?=[^0-9])([0-9a-zA-ZА-Яа-я_.-]{4,20})([@]{1})([0-9a-zA-ZА-Яа-я_.-]{2,5})[.]([0-9a-zA-ZА-Яа-я_.-]{2,5})([.][0-9a-zA-ZА-Яа-я_.-]{2,5}){0,1}$
+//^([^\.](?=.*[a-zA-Zа-яёА-ЯЁ])[0-9a-zA-Zа-яёА-ЯЁ_.-]{4,20})\@[a-zA-Zа-яёА-ЯЁ0-9]{2,5}(\.[a-zA-Zа-яёА-ЯЁ0-9]{2,5}){1,2}$
+    var handler = function(){
+    	var errorMessage = "";
 		var pass = password.value;
+
+		if( pass.length < 8 || pass.length > 20){
+			errorMessage += "Password length must be 8-20 characters";
+		} else
+		if(!pass.match(passUpLowRegex)){
+			errorMessage +="Password must contain at least one lower case char and one upper case char";
+		} else
+		if(!pass.match(passCharReg)){
+			errorMessage +="Password must contain at least one special symbols(ex: -+_!@#$%^&*.,?)";
+		}
+		password.setCustomValidity(errorMessage);
+    };
+
+    /*login.addEventListener("submit", function(e){
+   
+   		var log = login.value;
+
+    	console.log(log + ".");
+    	var log2 = log.trim();
+    	console.log(log2 + ".");
+
+		password.setCustomValidity(errorMessage);
+    	
+
+    })*/
+	
+
+	login.addEventListener("blur", function(e){
+		var errorMessage = "";
 		var log = login.value;
-		if (!((log).match(regex))){
-			alert("login not matches");
-		} else {
-			console.log(log + ".");
-			log.trim();
-			console.log(log + ".");
 
-
-		}
-		*/
-/*
-		var message;
-
-		if( pass.length < 8){
-			message = "password is too short";
-			//alert("password is too short");
-		} else
-		if( pass.length > 20) {
-			message = "password is too long";
-			//alert("password is too long");
-		} else
-		if(!pass.match(UpLowRegex)){
-			message ="must contain at least one lower case char and one uppaer case char";
-			//alert("must contain at least one lower case char and one uppaer case char");
-		} else
-		if(!pass.match(charReg)){
-			message ="must contain 3-5 special symbols(ex:-+_!@#$%^&*.,?)";
-
-			//alert("must contain 3-5 special symbols(ex:-+_!@#$%^&*.,?)");
-		}
-		password.setCustomValidity(message);*/
-
-/*	};*/
-
-
-	//elem.addEventListener("submit", handler);
-	password.addEventListener("blur", function(e){
-		console.log("afsas");
-		var message ="";
-		var pass = password.value;
-
-		if( pass.length < 8){
-			message += "password is too short";
-			//alert("password is too short");
-		} else
-		if( pass.length > 20) {
-			message += "password is too long";
-		} else
-		if(!pass.match(UpLowRegex)){
-			message +="must contain at least one lower case char and one uppaer case char";
-		} else
-		if(!pass.match(charReg)){
-			message +="must contain 3-5 special symbols(ex:-+_!@#$%^&*.,?)";
-
-			//alert("must contain 3-5 special symbols(ex:-+_!@#$%^&*.,?)");
-		}
-		password.setCustomValidity(message);
+		
+		if(!log.match(loginRegex)){
+			errorMessage +="Wrong login";
+		} 
+		login.setCustomValidity(errorMessage);
 	});
-
+password.addEventListener("blur", handler);
 };
-
-/*
-^[0-9a-zA-Zа-яёА-ЯЁ_.-]{4,20}\@[a-zA-Zа-яёА-ЯЁ0-9]{2,5}(\.[a-zA-Zа-яёА-ЯЁ0-9]{2,5}){1,2}$ 
-
-^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-+_!@#$%^&*.,?])).*$
-*/
