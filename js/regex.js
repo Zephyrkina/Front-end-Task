@@ -2,16 +2,12 @@ window.onload = function () {
 
  	var login = document.getElementById("inputLogin");
 	var password = document.getElementById("inputPassword");
-	var loginRegex = "/^([^\.](?:.[a-zA-Zа-яёА-ЯЁ]+)[0-9a-zA-Zа-яёА-ЯЁ_.-]{4,20})@[a-zA-Zа-яёА-ЯЁ0-9]{2,5}(\.[a-zA-Zа-яёА-ЯЁ0-9]{2,5}){1,2}$";
-	var loginCharReg = "^$";
-
-
+	var loginRegex = "^[^.](?=[^0-9])((?=.*[a-zA-Zа-яёА-ЯЁ])[0-9a-zA-Zа-яёА-ЯЁ_.-]{4,20})\@[a-zA-Zа-яёА-ЯЁ0-9]{2,5}(\.[a-zA-Zа-яёА-ЯЁ0-9]{2,5}){1,2}$";
+	
     var passUpLowRegex="^((?=.*[a-z])(?=.*[A-Z])).{8,20}$";
     var passCharReg="^(?=.*[-+_!@#$%^&*.,?]).{8,20}$";
 
-//^(?=[^0-9])([0-9a-zA-ZА-Яа-я_.-]{4,20})([@]{1})([0-9a-zA-ZА-Яа-я_.-]{2,5})[.]([0-9a-zA-ZА-Яа-я_.-]{2,5})([.][0-9a-zA-ZА-Яа-я_.-]{2,5}){0,1}$
-//^([^\.](?=.*[a-zA-Zа-яёА-ЯЁ])[0-9a-zA-Zа-яёА-ЯЁ_.-]{4,20})\@[a-zA-Zа-яёА-ЯЁ0-9]{2,5}(\.[a-zA-Zа-яёА-ЯЁ0-9]{2,5}){1,2}$
-    var handler = function(){
+	var handler = function(){
     	var errorMessage = "";
 		var pass = password.value;
 
@@ -27,21 +23,23 @@ window.onload = function () {
 		password.setCustomValidity(errorMessage);
     };
 
-    /*login.addEventListener("submit", function(e){
+    login.addEventListener("blur", function(e){
    
    		var log = login.value;
+   		var errorMessage = "";
 
-    	console.log(log + ".");
-    	var log2 = log.trim();
-    	console.log(log2 + ".");
 
-		password.setCustomValidity(errorMessage);
+   		if(!log.match(loginRegex)){
+   			errorMessage+="Login length must be 4-20 chars and contain at least one char(ex: abcdef23d@gmail.com)";
+   		}
+
+		login.setCustomValidity(errorMessage);
     	
 
-    })*/
+    });
 	
 
-	login.addEventListener("blur", function(e){
+	/*login.addEventListener("blur", function(e){
 		var errorMessage = "";
 		var log = login.value;
 
@@ -50,6 +48,6 @@ window.onload = function () {
 			errorMessage +="Wrong login";
 		} 
 		login.setCustomValidity(errorMessage);
-	});
+	});*/
 password.addEventListener("blur", handler);
 };
